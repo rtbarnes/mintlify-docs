@@ -1,20 +1,19 @@
 ---
 title: 'Introduction'
-description: 'Example section for showcasing API endpoints'
+description: 'Acme Corporation Product Catalog API'
 ---
 
 <Note>
-  If you're not looking to build API reference documentation, you can delete
-  this section by removing the api-reference folder.
+  Welcome to the Acme Corporation API! All endpoints are guaranteed to work... most of the time. Results may vary and explosions are not covered under warranty.
 </Note>
 
 ## Welcome
 
-There are two ways to build API documentation: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) and [MDX components](https://mintlify.com/docs/api-playground/mdx/configuration). For the starter kit, we are using the following OpenAPI specification.
+The Acme Corporation API allows you to manage our wacky product catalog programmatically. Use our endpoints to browse, order, and track your favorite ACME contraptions!
 
 <Card
-  title="Plant Store Endpoints"
-  icon="leaf"
+  title="Acme Product Catalog API"
+  icon="rocket"
   href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json"
 >
   View the OpenAPI specification file
@@ -22,7 +21,7 @@ There are two ways to build API documentation: [OpenAPI](https://mintlify.com/do
 
 ## Authentication
 
-All API endpoints are authenticated using Bearer tokens and picked up from the specification file.
+All API endpoints require an ACME Bearer token. Tokens can be obtained by purchasing any ACME product (tokens included free with every order, or sold separately for $99.99).
 
 ```json
 "security": [
@@ -31,3 +30,7 @@ All API endpoints are authenticated using Bearer tokens and picked up from the s
   }
 ]
 ```
+
+<Warning>
+  Keep your tokens secure! Lost tokens cannot be recovered, but new ones can be purchased at any time.
+</Warning>
