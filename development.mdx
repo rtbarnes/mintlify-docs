@@ -1,94 +1,128 @@
 ---
 title: 'Development'
-description: 'Preview changes locally to update your docs'
+description: 'Set up your local environment to test ACME products'
 ---
 
 <Info>
   **Prerequisites**:
-  - Node.js version 19 or higher
-  - A docs repository with a `docs.json` file
+  - Node.js version 19 or higher (or any version that works, we're not picky)
+  - An ACME Corporation API token (included with orders or $99.99 separately)
+  - A sense of adventure (and possibly a fire extinguisher)
 </Info>
 
-Follow these steps to install and run Mintlify on your operating system.
+Follow these steps to set up your local development environment for testing ACME products.
 
 <Steps>
-<Step title="Install the Mintlify CLI">
+<Step title="Install the ACME CLI">
 
 ```bash
-npm i -g mint
+npm i -g acme-cli
 ```
+
+<Warning>
+  Installation may cause minor explosions. This is normal and expected behavior.
+</Warning>
 </Step>
 
-<Step title="Preview locally">
+<Step title="Configure your API token">
 
-Navigate to your docs directory where your `docs.json` file is located, and run the following command:
+Set your ACME Bearer token as an environment variable:
 
 ```bash
-mint dev
+export ACME_TOKEN="your-token-here"
 ```
 
-A local preview of your documentation will be available at `http://localhost:3000`.
+Or create a `.acmerc` file in your project root:
+
+```json
+{
+  "token": "your-token-here",
+  "explosionLevel": "medium"
+}
+```
+
+</Step>
+
+<Step title="Start the local server">
+
+Navigate to your project directory and run:
+
+```bash
+acme dev
+```
+
+A local preview of the ACME product catalog will be available at `http://localhost:3000`.
+
+<Tip>Your preview updates automatically as you test products. Some updates may be explosive!</Tip>
 
 </Step>
 </Steps>
 
 ## Custom ports
 
-By default, Mintlify uses port 3000. You can customize the port Mintlify runs on by using the `--port` flag. For example, to run Mintlify on port 3333, use this command:
+By default, ACME uses port 3000. You can customize the port by using the `--port` flag:
 
 ```bash
-mint dev --port 3333
+acme dev --port 3333
 ```
 
-If you attempt to run Mintlify on a port that's already in use, it will use the next available port:
+If you attempt to run ACME on a port that's already in use, it will automatically use the next available port (or explode trying):
 
 ```md
 Port 3000 is already in use. Trying 3001 instead.
+Warning: Port 3001 may also explode.
 ```
 
-## Mintlify versions
+## Product testing
 
-Please note that each CLI release is associated with a specific version of Mintlify. If your local preview does not align with the production version, please update the CLI:
+Test ACME products safely in your local environment before deploying to production:
 
 ```bash
-npm mint update
+acme test --product rocket-skates
 ```
 
-## Validating links
-
-The CLI can assist with validating links in your documentation. To identify any broken links, use the following command:
-
-```bash
-mint broken-links
-```
-
-## Deployment
-
-If the deployment is successful, you should see the following:
-
-<Frame>
-  <img src="/images/checks-passed.png" alt="Screenshot of a deployment confirmation message that says All checks have passed." style={{ borderRadius: '0.5rem' }} />
-</Frame>
-
-## Code formatting
-
-We suggest using extensions on your IDE to recognize and format MDX. If you're a VSCode user, consider the [MDX VSCode extension](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx) for syntax highlighting, and [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) for code formatting.
+<Warning>
+  Testing may cause explosions. Always test in a safe, controlled environment (or don't - we're not your boss).
+</Warning>
 
 ## Troubleshooting
 
 <AccordionGroup>
-  <Accordion title='Error: Could not load the "sharp" module using the darwin-arm64 runtime'>
+  <Accordion title='Error: Product exploded during installation'>
 
-    This may be due to an outdated version of node. Try the following:
-    1. Remove the currently-installed version of the CLI: `npm remove -g mint`
-    2. Upgrade to Node v19 or higher.
-    3. Reinstall the CLI: `npm i -g mint`
+    This is normal! Try the following:
+    1. Clean up the explosion debris: `acme cleanup`
+    2. Reinstall: `npm i -g acme-cli`
+    3. If explosions persist, contact support (response times may vary)
   </Accordion>
 
-  <Accordion title="Issue: Encountering an unknown error">
+  <Accordion title="Issue: API token not working">
   
-    Solution: Go to the root of your device and delete the `~/.mintlify` folder. Then run `mint dev` again.
+    Solution: Purchase a new token for $99.99, or check if your current token has expired (they expire randomly).
+  </Accordion>
+
+  <Accordion title="Problem: Everything keeps exploding">
+  
+    This is expected behavior. ACME products are designed to explode. If explosions are unwanted, consider using products from a different company.
   </Accordion>
 </AccordionGroup>
 
-Curious about what changed in the latest CLI version? Check out the [CLI changelog](https://www.npmjs.com/package/mintlify?activeTab=versions).
+## Deployment
+
+When deploying to production, make sure to:
+
+1. Set your production API token
+2. Enable explosion logging
+3. Have a fire extinguisher nearby
+4. Cross your fingers
+
+If deployment is successful, you should see:
+
+```md
+✅ Deployment complete!
+⚠️  Warning: Product may explode at any time
+```
+
+<Note>
+  Curious about what changed in the latest version? Check our [changelog](https://changelog.acmecorp.com). Warning: Reading the changelog may cause explosions.
+</Note>
